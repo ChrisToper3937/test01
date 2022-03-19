@@ -12,6 +12,9 @@ typedef struct LNode {
 //创建表头
 ListNode createHead() {
 	ListNode head = (ListNode)malloc(sizeof(LNode));
+	if (head == NULL) {
+		return;
+	}
 	head->next = NULL;
 	return head;
 }
@@ -19,6 +22,10 @@ ListNode createHead() {
 //创建结点
 ListNode createNode() {
 	ListNode newNode = (ListNode)malloc(sizeof(LNode));
+	if (newNode==NULL)
+	{
+		return;
+	}
 	printf("请输入结点数值：");
 	scanf_s("%d", &newNode->data);
 	newNode->next = NULL;
