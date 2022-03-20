@@ -3,12 +3,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//初始化结构体
 typedef struct DualNode {
 	int data;
 	struct DualNode* prior;
 	struct DualNode* next;
 }DualNode,*DualList;
 
+//创建头结点
 DualList createList() {
 	DualList head = (DualList)malloc(sizeof(DualNode));
 	if (head == NULL)return;
@@ -16,6 +18,7 @@ DualList createList() {
 	return head;
 }
 
+//创建结点
 DualList createNode() {
 	DualList newNode = (DualList)malloc(sizeof(DualNode));
 	if (newNode == NULL)return;
@@ -25,6 +28,7 @@ DualList createNode() {
 	return newNode;
 }
 
+//尾插法插入结点
 void addNode(DualList head) {
 		DualList temp = head;
 		while (temp->next)
@@ -37,11 +41,7 @@ void addNode(DualList head) {
 		printf("添加完毕\n");
 }
 
-void insertNode(DualList head, int index) {
-	
-	printf("插入成功\n");
-}
-
+//删除结点
 void deleteNode(DualList head, int index) {
 	DualList temp = head;
 	if (temp->next == NULL) {
@@ -58,6 +58,7 @@ void deleteNode(DualList head, int index) {
 	printf("删除成功\n");
 }
 
+//打印节点
 void printList(DualList head) {
 	DualList temp = head;
 	while (temp->next)
@@ -69,6 +70,7 @@ void printList(DualList head) {
 	printf("打印完成\n");
 }
 
+//简单的测试功能
 int main() {
 
 	DualList head = createList();
